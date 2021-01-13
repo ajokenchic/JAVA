@@ -1,0 +1,15 @@
+apply plugin: 'java'
+apply plugin: 'application'
+mainClassName = "org.hyperledger.fabric.chaincode.ObjectArray"
+
+
+
+run{
+    standardInput = System.in
+}
+task doit(dependsOn:[jar, run]) {
+    doLast {
+        println("*** do it! ***")
+    }
+}
+
