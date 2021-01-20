@@ -4,68 +4,85 @@ import java.util.Scanner;
 import java.util.Random;
 import java.util.Stack;
 
-class Student {
+class Person {
     private String name;
-    private int code;
     private int age;
 
-    public Student() {}
-
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
+    public Person() {}
+    public Person(String name, int age) {
         this.name = name;
-    }
-    public int getCode() {
-        return code;
-    }
-    public void setCode(int code) {
-        this.code = code;
-    }
-    public int getAge() {
-        return age;
-    }
-    public void setAge(int age) {
         this.age = age;
+    }
+    public void show() {
+        System.out.println("이름: "+name+", 나이: "+age);
+    }
+}
+class Student extends Person {
+    private String school;
+    private int grade;
+
+    public Student() {}
+    public Student(String name,int age,String school, int grade) {
+        super(name,age);
+        this.school = school;
+        this.grade = grade;
+    }
+
+    public void show() {
+        super.show();
+        System.out.println("학교: "+school+",학년: "+grade);
+    }
+}
+class workStudent extends Student{
+    private String job;
+    private int salary;
+
+    public workStudent(){}
+    public workStudent(String name,int age,String school, int grade,String job,int salary){
+        super(name, age, school, grade);
+        this.job=job;
+        this.salary=salary;
+    }
+    public void show(){
+        super.show();
+        System.out.println("직업: "+job+",연봉: "+salary+" 만");
     }
 }
 
 public class ObjectArray {
-    static void initStudent(Student[] s) {
-        Scanner scan = new Scanner(System.in);
-        Random rand = new Random();
-        System.out.println("총 학생 수: " + s.length);
-        for (int i = 0; i < s.length; i++) {
-            s[i] = new Student();
-            s[i].setAge(20 + rand.nextInt(10));
-            s[i].setCode(202100000 + rand.nextInt(99999));
-            System.out.print("학생 이름 입력: ");
-            s[i].setName(scan.next());
-            System.out.println((i + 1) + "번째 학생: " + s[i].getAge() + "세 - " + s[i].getCode() + " - " + s[i].getName());
+    static void initStudent(workStudent[] students){
+        for(int i=0;i<students.length;i++){
+            Scanner scan=new Scanner(System.in);
+            Random rand=new Random();
+            System.out.println("이름과 학교,직업 입력하세요.");
+            students[i]=new workStudent(scan.next(), 20+rand.nextInt(10),scan.next(),1+rand.nextInt(3),scan.next(),2000+rand.nextInt(2000));
+            students[i].show();
+            System.out.println("---------------------------------");
         }
-        scan.close();
+
     }
-    static void showStudent(Student[] a) {
-        int n = a.length;
-        for (int i = 0; i < n; i++) {
-            System.out.println("나이: " + a[i].getAge() + "세 , 학번: " + a[i].getCode() + ", 이름:" + a[i].getName());
-        }
+    static void show(workStudent[] students){
+        for(int i=0;i<students.length;i++)students[i].show();
     }
-    static Student[] stackStudent(Student[] a) {
-        Student[] temp = new Student[a.length];
-        Stack<Student> ss = new Stack<>();
-        for (int i = 0; i < a.length; i++) ss.push(a[i]);
-        for (int i = 0; i < a.length; i++) temp[i] = ss.pop();
-        return temp;
+    static workStudent[] stack(workStudent[] students){
+        workStudent[] ss=new workStudent[students.length];
+        Stack<workStudent> stack=new Stack<>();
+
+        for(int i=0;i<students.length;i++) stack.push(students[i]);
+        for(int i=0;i< students.length;i++) ss[i]=stack.pop();
+
+        return ss;
     }
+
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        System.out.print("학생 수 입력: ->");
-        Student[] s = new Student[scan.nextInt()];
-        initStudent(s);
-        showStudent(s);
-        showStudent(stackStudent(s));
+        Scanner scan=new Scanner(System.in);
+        System.out.println("학생 수 입력: ");
+        workStudent[]student=new workStudent[scan.nextInt()];
+        initStudent(student);
+        show(student);
+        System.out.println("---------------------------------");
+        show(stack(student));
+        scan.close();
     }
 }
 

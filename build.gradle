@@ -1,6 +1,6 @@
 apply plugin: 'java'
 apply plugin: 'application'
-mainClassName = "org.hyperledger.fabric.chaincode.ObjectArray"
+mainClassName = "org.hyperledger.fabric.chaincode.LinkedList"
 
 
 
