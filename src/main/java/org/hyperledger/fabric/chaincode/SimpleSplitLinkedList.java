@@ -47,7 +47,6 @@ class Chain{
         }
         System.out.println("null");
     }
-
     public int Num(){
         if(this.first!=null){
         ChainNode temp=this.first;
@@ -114,7 +113,6 @@ class Chain{
                 }
             }
         }
-
         return Merged;
     }
 }
@@ -127,13 +125,7 @@ public class SimpleSplitEX {
             n++;
         }
     }
-
     static int[] Split(Chain link,Chain[] Splited) {
-//        Chain Former=new Chain();
-//        Chain Latter=new Chain();
-//        Latter=link.Split(Former);
-//        Former.Show();
-//        Latter.Show();
         Splited[0]=new Chain();
         Splited[1]=new Chain();
         Splited[0] = link;
@@ -155,11 +147,9 @@ public class SimpleSplitEX {
             if(!check(cnt)) flag=1;
             idx++;
         }
-
         return cnt;
     }
     static void Merge(Chain[] Splited,int[] cnt){
-
         int findnull;
         for(int i=cnt.length-1;i>2;i--){
             if(cnt[i]==0) continue;
@@ -178,9 +168,6 @@ public class SimpleSplitEX {
             }
             if(cnt[findnull]==cnt[0]) break;
         }
-
-
-
     }
     static boolean check(int[] cnt){
         for(int i=1;i<cnt.length;i++){
@@ -196,9 +183,6 @@ public class SimpleSplitEX {
             }
         }
     }
-
-
-
     public static void main(String[] args) {
         Chain link=new Chain();
         Insert(link,12);
