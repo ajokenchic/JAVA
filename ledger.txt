@@ -1,3 +1,30 @@
+MONTH
+101,Checking account #1,1032.57
+102,Checking account #2,543.78
+505,Advertising expense,25.00
+510,Auto expense,195.40
+515,Bank charge,0.00
+520,Books and publication,27.95
+525,Interest expense,103.50
+535,Miscellaneous expense,12.45
+540,Office expense,57.50
+545,Postage and shipping,21.00
+550,Rent,500.00
+555,Supplies,112.00
+MONTH
+101,Checking account #1,2114.56
+102,Checking account #2,3094.17
+505,Advertising expense,25.00
+510,Auto expense,307.92
+515,Bank charge,0.00
+520,Books and publication,27.95
+525,Interest expense,255.20
+535,Miscellaneous expense,17.87
+540,Office expense,105.25
+545,Postage and shipping,27.63
+550,Rent,1000.00
+555,Supplies,167.50
+MONTH
 101,Checking account #1,5219.23
 102,Checking account #2,1321.20
 505,Advertising expense,25.00

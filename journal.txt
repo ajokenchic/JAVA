@@ -1,0 +1,12 @@
+101,1271,01/02/21,Auto expense,-78.70
+510,1271,01/02/21,Tune-up and minor repair,78.70
+101,1272,02/02/21,Rent,-500.00
+550,1272,02/02/21,Rent for April,500.00
+101,1273,03/04/21,Advertising,-87.50
+505,1273,03/04/21,Newspaper ad re:new product,87.50
+102,670,03/02/21,Office expense,-32.78
+540,670,03/02/21,Printer cartridge,32.78
+101,1274,04/02/21,Auto expense,-31.83
+510,1274,04/09/21,Oil change,31.83
+101,1273,05/01/21,Miscellaneous expense,-13.99
+535,1273,05/01/21,Coffee for meeting,13.99
